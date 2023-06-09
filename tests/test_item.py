@@ -45,3 +45,11 @@ def test_instantiate_from_csv(test_product):
 
 def test_string_to_number():
     assert Item.string_to_number('3.6') == 3
+
+
+def test_repr(test_product):
+    assert test_product.__repr__() == "Item('Планшет', 12000, 10)"
+
+
+def test_str(test_product):
+    assert test_product.__str__() == 'Планшет'
