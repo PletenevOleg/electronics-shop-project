@@ -30,6 +30,11 @@ class Item:
         """Отображает информацию об объекте класса для пользователя."""
         return f'{self.__name}'
 
+    def __add__(self, other):
+        """Сложение экземпляров класса `Phone` и `Item` (сложение по количеству товара в магазине)"""
+        if issubclass(other.__class__, self.__class__):
+            return self.quantity + other.quantity
+
     def calculate_total_price(self) -> float:
         """
         Рассчитывает общую стоимость конкретного товара в магазине.
